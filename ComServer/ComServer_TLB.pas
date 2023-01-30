@@ -12,7 +12,7 @@ unit ComServer_TLB;
 // ************************************************************************ //
 
 // $Rev: 52393 $
-// File generated on 30.01.2023 10:28:41 from Type Library described below.
+// File generated on 30.01.2023 22:58:04 from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: C:\Users\z003hvdw\SCM\COMDemo\ComServer\ComServer (1)
@@ -72,9 +72,9 @@ type
 // *********************************************************************//
   ITest = interface(IUnknown)
     ['{C293FB27-B8BF-451C-90DE-7CE3C138B0E7}']
-    function EchoInt(i: Integer): Integer; stdcall;
-    function EchoDouble(d: Double): Double; stdcall;
-    function EchoString(s: PWideChar): PWideChar; stdcall;
+    function EchoInt(i: Integer): Integer; safecall;
+    function EchoDouble(d: Double): Double; safecall;
+    function EchoString(const s: WideString): WideString; safecall;
   end;
 
 // *********************************************************************//

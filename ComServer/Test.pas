@@ -10,9 +10,9 @@ uses
 type
   TTest = class(TTypedComObject, ITest)
   protected
-    function EchoDouble(d: Double): Double; stdcall;
-    function EchoInt(i: Integer): Integer; stdcall;
-    function EchoString(s: PWideChar): PWideChar; stdcall;
+    function EchoDouble(d: Double): Double; safecall;
+    function EchoInt(i: Integer): Integer; safecall;
+    function EchoString(const s: WideString): WideString; safecall;
   end;
 
 implementation
@@ -31,7 +31,7 @@ begin
   Result := i;
 end;
 
-function TTest.EchoString(s: PWideChar): PWideChar;
+function TTest.EchoString(const s: WideString): WideString;
 begin
   writeln('[string] Delphi receives: ', s);
   Result := s;

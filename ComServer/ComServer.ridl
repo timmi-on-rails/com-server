@@ -6,7 +6,7 @@
 // However, when applying changes via the Editor this file will be regenerated
 // and comments or formatting changes will be lost.
 // ************************************************************************ //
-// File generated on 30.01.2023 10:26:54 (- $Rev: 12980 $, 8627968).
+// File generated on 30.01.2023 22:58:05 (- $Rev: 12980 $, 23535234).
 
 [
   uuid(92C99953-EA24-487D-A728-956B1338C264),
@@ -30,11 +30,11 @@ library ComServer
   interface ITest: IUnknown
   {
     [id(0x00000065)]
-    long _stdcall EchoInt([in] long i);
+    HRESULT _stdcall EchoInt([in] long i, [out, retval] long* pRetVal);
     [id(0x00000066)]
-    double _stdcall EchoDouble([in] double d);
+    HRESULT _stdcall EchoDouble([in] double d, [out, retval] double* pRetVal);
     [id(0x00000067)]
-    LPWSTR _stdcall EchoString([in] LPWSTR s);
+    HRESULT _stdcall EchoString([in] BSTR s, [out, retval] BSTR* pRetVal);
   };
 
   [
